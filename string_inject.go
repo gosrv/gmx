@@ -114,4 +114,3 @@ var StringPropertyInjects = &PropertyInjectGroup{
 		reflect.Ptr:     FuncStringValueInjector(PtrInject),
 	},
 }
-
