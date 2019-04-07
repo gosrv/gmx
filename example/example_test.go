@@ -18,6 +18,8 @@ func Add(i, j int) int {
 func Test1(t *testing.T) {
 	data := &Data{Name: "eleven", Age: 18}
 	mgr := gmx.NewMXManager()
+	mgr.AddItemIns("bean", *data)
+	mgr.AddItemIns("beanp", data)
 	mgr.AddItemIns("bean.name", data.Name)
 	mgr.AddItemIns("bean.pname", &data.Name)
 	mgr.AddItemIns("bean.func", Add)

@@ -99,12 +99,12 @@ func (this *MXManager) AddItemIns(name string, ins interface{}) error {
 	return this.AddItem(item)
 }
 
-func (this *MXManager) AddItemOpt(name string, getter IGetter, setter ISetter) error {
-	return this.AddItem(NewMXItem(name, getter, setter, nil, nil))
+func (this *MXManager) AddItemOpt(name string, getter IGetter, setter ISetter, setterType string) error {
+	return this.AddItem(NewMXItem(name, getter, setter, setterType, nil, nil))
 }
 
 func (this *MXManager) AddCaller(name string, caller ICaller, info *CallerInfo) error {
-	return this.AddItem(NewMXItem(name, nil, nil, caller, info))
+	return this.AddItem(NewMXItem(name, nil, nil, "", caller, info))
 }
 
 func (this *MXManager) AddItem(item *MXItem) error {

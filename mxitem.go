@@ -54,17 +54,18 @@ type MXItemInfo struct {
 	Name       string
 	Getter     bool
 	Setter     bool
+	SetterType string
 	CallerInfo *CallerInfo
 }
 
-func NewMXItemInfo(item *MXItem, callerInfo *CallerInfo) MXItemInfo {
+func NewMXItemInfo(item *MXItem, setterType string, callerInfo *CallerInfo) MXItemInfo {
 	return MXItemInfo{Name: item.Name, Getter: item.Getter != nil,
-		Setter: item.Setter != nil, CallerInfo: callerInfo}
+		Setter: item.Setter != nil, SetterType:setterType, CallerInfo: callerInfo}
 }
 
-func NewMXItem(name string, getter IGetter, setter ISetter, caller ICaller, callerInfo *CallerInfo) *MXItem {
+func NewMXItem(name string, getter IGetter, setter ISetter, setterType string, caller ICaller, callerInfo *CallerInfo) *MXItem {
 	item := &MXItem{Name: name, Getter: getter, Setter: setter, Caller: caller}
-	item.Info = NewMXItemInfo(item, callerInfo)
+	item.Info = NewMXItemInfo(item, setterType, callerInfo)
 	return item
 }
 
@@ -132,7 +133,7 @@ func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error)
 		for i := 0; i < rType.NumOut(); i++ {
 			rt = append(rt, rType.Out(i).Name())
 		}
-		return NewMXItem(name, nil, nil, caller, NewCallerInfo(pt, rt)), nil
+		return NewMXItem(name, nil, nil, "", caller, NewCallerInfo(pt, rt)), nil
 	} else {
 		toString := mgr.GetToString(rType)
 		getter := FuncGetter(func() (string, error) { return toString.ToString(rValue.Interface()) })
@@ -143,6 +144,6 @@ func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error)
 				return fromString.FromString(rValue, val)
 			})
 		}
-		return NewMXItem(name, getter, setter, nil, nil), nil
+		return NewMXItem(name, getter, setter, rType.Name(),nil, nil), nil
 	}
 }

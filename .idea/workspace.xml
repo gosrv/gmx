@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.62350833">
+    <splitter split-orientation="horizontal" split-proportion="0.5202864">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -25,11 +25,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gmgr.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="102" column="28" lean-forward="true" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
+                <state relative-caret-position="385">
+                  <caret line="106" column="54" selection-start-line="106" selection-start-column="54" selection-end-line="106" selection-end-column="54" />
                 </state>
               </provider>
             </entry>
@@ -46,8 +46,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/example/example_test.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="344">
-                  <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+                <state relative-caret-position="435">
+                  <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
                   <folding>
                     <element signature="e#17#81#0" expanded="true" />
                   </folding>
@@ -100,11 +100,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mxitem.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="436">
-                  <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+                <state relative-caret-position="411">
+                  <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
                   <folding>
                     <element signature="e#13#41#0" expanded="true" />
                   </folding>
@@ -116,11 +116,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mxitem.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="119" column="85" selection-start-line="119" selection-start-column="85" selection-end-line="119" selection-end-column="85" />
+                <state relative-caret-position="634">
+                  <caret line="146" column="74" lean-forward="true" selection-start-line="146" selection-start-column="74" selection-end-line="146" selection-end-column="74" />
                   <folding>
                     <element signature="e#13#41#0" expanded="true" />
                   </folding>
@@ -128,7 +128,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/handler.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="273">
@@ -202,10 +202,10 @@
         <option value="$PROJECT_DIR$/example/example1.go" />
         <option value="$PROJECT_DIR$/util.go" />
         <option value="$PROJECT_DIR$/string_inject.go" />
-        <option value="$PROJECT_DIR$/example/example_test.go" />
         <option value="$PROJECT_DIR$/handler.go" />
-        <option value="$PROJECT_DIR$/gmgr.go" />
+        <option value="$PROJECT_DIR$/example/example_test.go" />
         <option value="$PROJECT_DIR$/mxitem.go" />
+        <option value="$PROJECT_DIR$/gmgr.go" />
       </list>
     </option>
   </component>
@@ -282,18 +282,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 18h 04m 11s.xml">
-      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 18h 04m 23s.xml">
-      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 18h 08m 16s.xml">
-      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 18h 09m 00s.xml">
-      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="Test1_in_example_test_go - 2019.04.07 at 18h 15m 40s.xml">
       <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -310,6 +298,18 @@
       <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
     <history-entry file="Test1_in_example_test_go - 2019.04.07 at 19h 04m 03s.xml">
+      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 19h 05m 58s.xml">
+      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 19h 06m 55s.xml">
+      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 19h 07m 34s.xml">
+      <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Test1_in_example_test_go - 2019.04.07 at 19h 40m 57s.xml">
       <configuration name="Test1 in example_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
@@ -349,12 +349,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/example/example_test.go</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/handler.go</url>
           <line>16</line>
@@ -441,6 +435,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/ProgramFiles/Go/src/sync/mutex.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/handler.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -451,37 +452,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mxitem.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+          <folding>
+            <element signature="e#13#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/example_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state relative-caret-position="435">
+          <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
             <element signature="e#17#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/ProgramFiles/Go/src/sync/mutex.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gmgr.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="102" column="28" lean-forward="true" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mxitem.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#13#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="385">
+          <caret line="106" column="54" selection-start-line="106" selection-start-column="54" selection-end-line="106" selection-end-column="54" />
         </state>
       </provider>
     </entry>
