@@ -38,10 +38,34 @@ type MXItem struct {
 	Getter IGetter
 	Setter ISetter
 	Caller ICaller
+	Info   MXItemInfo
 }
 
-func NewMXItem(name string, getter IGetter, setter ISetter, caller ICaller) *MXItem {
-	return &MXItem{Name: name, Getter: getter, Setter: setter, Caller: caller}
+type CallerInfo struct {
+	ParamTypes  []string
+	ReturnTypes []string
+}
+
+func NewCallerInfo(paramTypes []string, returnTypes []string) *CallerInfo {
+	return &CallerInfo{ParamTypes: paramTypes, ReturnTypes: returnTypes}
+}
+
+type MXItemInfo struct {
+	Name       string
+	Getter     bool
+	Setter     bool
+	CallerInfo *CallerInfo
+}
+
+func NewMXItemInfo(item *MXItem, callerInfo *CallerInfo) MXItemInfo {
+	return MXItemInfo{Name: item.Name, Getter: item.Getter != nil,
+		Setter: item.Setter != nil, CallerInfo: callerInfo}
+}
+
+func NewMXItem(name string, getter IGetter, setter ISetter, caller ICaller, callerInfo *CallerInfo) *MXItem {
+	item := &MXItem{Name: name, Getter: getter, Setter: setter, Caller: caller}
+	item.Info = NewMXItemInfo(item, callerInfo)
+	return item
 }
 
 func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error) {
@@ -100,7 +124,15 @@ func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error)
 			}
 			return "", errors.New("unknown")
 		})
-		return NewMXItem(name, nil, nil, caller), nil
+		pt := make([]string, 0, rType.NumIn())
+		for i := 0; i < rType.NumIn(); i++ {
+			pt = append(pt, rType.In(i).Name())
+		}
+		rt := make([]string, 0, rType.NumOut())
+		for i := 0; i < rType.NumOut(); i++ {
+			rt = append(rt, rType.Out(i).Name())
+		}
+		return NewMXItem(name, nil, nil, caller, NewCallerInfo(pt, rt)), nil
 	} else {
 		toString := mgr.GetToString(rType)
 		getter := FuncGetter(func() (string, error) { return toString.ToString(rValue.Interface()) })
@@ -111,6 +143,6 @@ func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error)
 				return fromString.FromString(rValue, val)
 			})
 		}
-		return NewMXItem(name, getter, setter, nil), nil
+		return NewMXItem(name, getter, setter, nil, nil), nil
 	}
 }

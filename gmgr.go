@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+	"sync"
 )
 
 type IToString interface {
@@ -25,6 +26,7 @@ func (this FuncFromString) FromString(val reflect.Value, str string) error {
 }
 
 type MXManager struct {
+	Lock       sync.Mutex
 	Items      map[string]*MXItem
 	ToString   map[reflect.Type]IToString
 	FromString map[reflect.Type]IFromString
@@ -98,11 +100,11 @@ func (this *MXManager) AddItemIns(name string, ins interface{}) error {
 }
 
 func (this *MXManager) AddItemOpt(name string, getter IGetter, setter ISetter) error {
-	return this.AddItem(NewMXItem(name, getter, setter, nil))
+	return this.AddItem(NewMXItem(name, getter, setter, nil, nil))
 }
 
-func (this *MXManager) AddCaller(name string, caller ICaller) error {
-	return this.AddItem(NewMXItem(name, nil, nil, caller))
+func (this *MXManager) AddCaller(name string, caller ICaller, info *CallerInfo) error {
+	return this.AddItem(NewMXItem(name, nil, nil, caller, info))
 }
 
 func (this *MXManager) AddItem(item *MXItem) error {
