@@ -60,7 +60,7 @@ type MXItemInfo struct {
 
 func NewMXItemInfo(item *MXItem, setterType string, callerInfo *CallerInfo) MXItemInfo {
 	return MXItemInfo{Name: item.Name, Getter: item.Getter != nil,
-		Setter: item.Setter != nil, SetterType:setterType, CallerInfo: callerInfo}
+		Setter: item.Setter != nil, SetterType: setterType, CallerInfo: callerInfo}
 }
 
 func NewMXItem(name string, getter IGetter, setter ISetter, setterType string, caller ICaller, callerInfo *CallerInfo) *MXItem {
@@ -144,6 +144,6 @@ func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error)
 				return fromString.FromString(rValue, val)
 			})
 		}
-		return NewMXItem(name, getter, setter, rType.Name(),nil, nil), nil
+		return NewMXItem(name, getter, setter, rType.Name(), nil, nil), nil
 	}
 }

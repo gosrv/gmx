@@ -2,9 +2,9 @@ package gmx
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"reflect"
-	"sync"
 )
 
 type IToString interface {
@@ -37,7 +37,6 @@ type IMXManager interface {
 }
 
 type MXManager struct {
-	Lock       sync.Mutex
 	Items      map[string]*MXItem
 	ToString   map[reflect.Type]IToString
 	FromString map[reflect.Type]IFromString
@@ -129,4 +128,65 @@ func (this *MXManager) AddItem(item *MXItem) error {
 	}
 	this.Items[item.Name] = item
 	return nil
+}
+
+func (this *MXManager) HandleKeys() ([]byte, error) {
+	infos := make([]MXItemInfo, 0, len(this.Items))
+	for _, v := range this.Items {
+		infos = append(infos, v.Info)
+	}
+	return json.Marshal(infos)
+}
+
+func (this *MXManager) HandleGet(keys []string) ([]byte, error) {
+	if len(keys) == 1 {
+		item := this.Items[keys[0]]
+		if item == nil || item.Getter == nil {
+			return nil, errors.New("not exist")
+		}
+		val, err := item.Getter.Get()
+		return []byte(val), err
+	} else {
+		rep := make([]string, 0, len(keys))
+		for _, key := range keys {
+			item := this.Items[key]
+			if item == nil || item.Getter == nil {
+				rep = append(rep, "")
+			} else {
+				val, _ := item.Getter.Get()
+				rep = append(rep, val)
+			}
+		}
+		return json.Marshal(rep)
+	}
+}
+
+func (this *MXManager) HandleSet(keys []string, vals []string) ([]byte, error) {
+	if len(keys) != len(vals) {
+		return nil, errors.New("keys and values len not match")
+	}
+	num := 0
+	for i := 0; i < len(keys); i++ {
+		key := keys[i]
+		val := vals[i]
+		item := this.Items[key]
+		if item.Setter == nil {
+			continue
+		}
+		err := item.Setter.Set(val)
+		if err != nil {
+			continue
+		}
+		num++
+	}
+	return []byte(fmt.Sprintf("%v", num)), nil
+}
+
+func (this *MXManager) HandleCall(key string, params []string) ([]byte, error) {
+	item := this.Items[key]
+	if item == nil || item.Caller == nil {
+		return nil, errors.New("not exist")
+	}
+	rep, err := item.Caller.Call(params...)
+	return []byte(rep), err
 }
