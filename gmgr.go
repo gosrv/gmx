@@ -25,12 +25,25 @@ func (this FuncFromString) FromString(val reflect.Value, str string) error {
 	return this(val, str)
 }
 
+type IMXManager interface {
+	SetToString(tp reflect.Type, toString IToString)
+	GetToString(tp reflect.Type) IToString
+	SetFromString(tp reflect.Type, fromString IFromString)
+	GetFromString(tp reflect.Type) IFromString
+	AddItemIns(name string, ins interface{}) error
+	AddItemOpt(name string, getter IGetter, setter ISetter, setterType string) error
+	AddCaller(name string, caller ICaller, info *CallerInfo) error
+	AddItem(item *MXItem) error
+}
+
 type MXManager struct {
 	Lock       sync.Mutex
 	Items      map[string]*MXItem
 	ToString   map[reflect.Type]IToString
 	FromString map[reflect.Type]IFromString
 }
+
+var _ IMXManager = (*MXManager)(nil)
 
 func NewMXManager() *MXManager {
 	mgr := &MXManager{
