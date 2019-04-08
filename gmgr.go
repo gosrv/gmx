@@ -63,9 +63,6 @@ func NewMXManager() *MXManager {
 			rValue = rValue.Elem()
 		}
 
-		fmt.Println(rValue)
-		fmt.Println(rType)
-		fmt.Println(ins)
 		if rValue.Kind() == reflect.Struct {
 			val, err := json.Marshal(rValue.Interface())
 			return string(val), err
