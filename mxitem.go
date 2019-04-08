@@ -69,7 +69,7 @@ func NewMXItem(name string, getter IGetter, setter ISetter, setterType string, c
 	return item
 }
 
-func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error) {
+func NewMXItemIns(name string, ins interface{}, mgr *MXManager, canRead bool, canWrite bool) (*MXItem, error) {
 	rType := reflect.TypeOf(ins)
 	rValue := reflect.ValueOf(ins)
 
@@ -136,10 +136,13 @@ func NewMXItemIns(name string, ins interface{}, mgr *MXManager) (*MXItem, error)
 		return NewMXItem(name, nil, nil, "", caller, NewCallerInfo(pt, rt)), nil
 	} else {
 		toString := mgr.GetToString(rType)
-		getter := FuncGetter(func() (string, error) { return toString.ToString(rValue.Interface()) })
+		var getter IGetter
+		if canRead {
+			getter = FuncGetter(func() (string, error) { return toString.ToString(rValue.Interface()) })
+		}
 		var setter ISetter
 		fromString := mgr.GetFromString(rType)
-		if rValue.CanAddr() {
+		if rValue.CanAddr() && canWrite {
 			setter = FuncSetter(func(val string) error {
 				return fromString.FromString(rValue, val)
 			})

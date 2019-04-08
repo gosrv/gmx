@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75775f13-8d30-4235-ab4c-f52852cd2a61" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gmgr.go" beforeDir="false" afterPath="$PROJECT_DIR$/gmgr.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler.go" afterDir="false" />
-    </list>
+    <list default="true" id="75775f13-8d30-4235-ab4c-f52852cd2a61" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +24,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gmgr.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="649">
-                  <caret line="198" column="4" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="4" />
+                <state relative-caret-position="-420">
+                  <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -119,7 +116,7 @@
             <entry file="file://$PROJECT_DIR$/mxitem.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="634">
-                  <caret line="146" column="74" lean-forward="true" selection-start-line="146" selection-start-column="74" selection-end-line="146" selection-end-column="74" />
+                  <caret line="146" column="75" lean-forward="true" selection-start-line="146" selection-start-column="75" selection-end-line="146" selection-end-column="75" />
                   <folding>
                     <element signature="e#13#41#0" expanded="true" />
                   </folding>
@@ -130,8 +127,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/handler.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+                <state relative-caret-position="250">
+                  <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="34" />
                   <folding>
                     <element signature="e#13#42#0" expanded="true" />
                   </folding>
@@ -203,8 +200,8 @@
         <option value="$PROJECT_DIR$/string_inject.go" />
         <option value="$PROJECT_DIR$/example/example_test.go" />
         <option value="$PROJECT_DIR$/mxitem.go" />
-        <option value="$PROJECT_DIR$/handler.go" />
         <option value="$PROJECT_DIR$/gmgr.go" />
+        <option value="$PROJECT_DIR$/handler.go" />
       </list>
     </option>
   </component>
@@ -330,7 +327,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Statistic" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.1495327" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.1495327" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -441,28 +438,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mxitem.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+        <state relative-caret-position="634">
+          <caret line="146" column="75" lean-forward="true" selection-start-line="146" selection-start-column="75" selection-end-line="146" selection-end-column="75" />
           <folding>
             <element signature="e#13#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handler.go">
+    <entry file="file://$PROJECT_DIR$/gmgr.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
-          <folding>
-            <element signature="e#13#42#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-420">
+          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmgr.go">
+    <entry file="file://$PROJECT_DIR$/handler.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="198" column="4" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="4" />
+        <state relative-caret-position="250">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="e#13#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -31,6 +31,7 @@ type IMXManager interface {
 	SetFromString(tp reflect.Type, fromString IFromString)
 	GetFromString(tp reflect.Type) IFromString
 	AddItemIns(name string, ins interface{}) error
+	AddItemInsRW(name string, ins interface{}, canRead bool, canWrite bool) error
 	AddItemOpt(name string, getter IGetter, setter ISetter, setterType string) error
 	AddCaller(name string, caller ICaller, info *CallerInfo) error
 	AddItem(item *MXItem) error
@@ -100,11 +101,15 @@ func (this *MXManager) GetFromString(tp reflect.Type) IFromString {
 }
 
 func (this *MXManager) AddItemIns(name string, ins interface{}) error {
+	return this.AddItemInsRW(name, ins, true, true)
+}
+
+func (this *MXManager) AddItemInsRW(name string, ins interface{}, canRead bool, canWrite bool) error {
 	if ins == nil {
 		return fmt.Errorf("manage nil item %v", name)
 	}
 
-	item, err := NewMXItemIns(name, ins, this)
+	item, err := NewMXItemIns(name, ins, this, canRead, canWrite)
 	if err != nil {
 		return err
 	}
